@@ -1,0 +1,38 @@
+<h2>Listing challenges</h2>
+
+
+
+<div class="panel panel-grey">
+  <div class="panel-heading">Listing challenges</div>
+  <div class="panel-body">
+    <table class="table table-hover-color">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Owner</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @my_challenges.each do |challenge| %>
+        <tr class="<%= cycle("active", "success", "warning", "danger") -%>">
+          <td><%= challenge.name %></td>
+          <td>category</td>
+          <td>
+            <% challenge.get_owners.each do |owner| %>
+            <%= owner.name %>
+            <% end %>
+          </td>
+          <td>active</td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<br>
+
+<%= link_to 'New Challenge', new_challenge_path %>
