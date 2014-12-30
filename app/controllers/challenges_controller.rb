@@ -28,6 +28,7 @@ class ChallengesController < ApplicationController
 
     respond_to do |format|
       if @challenge.save
+        current_user.add_role :owner, @challenge
         format.html { redirect_to @challenge, notice: 'Challenge was successfully created.' }
         format.json { render :show, status: :created, location: @challenge }
       else
@@ -64,7 +65,7 @@ class ChallengesController < ApplicationController
   #get challenges created by current_user
 
   def my_challenges
-    
+    @my_challenges = Challenge.with_role(:owner, current_user)
   end
 
 
