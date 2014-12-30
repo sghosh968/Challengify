@@ -20,10 +20,10 @@
   </tbody>
 </table>
 
-<div class="panel panel-red">
+<div class="panel panel-grey">
   <div class="panel-heading">Listing challenges</div>
   <div class="panel-body">
-    <table class="table table-hover table-bordered">
+    <table class="table table-hover-color">
       <thead>
         <tr>
           <th>Name</th>
@@ -35,9 +35,13 @@
       <tbody>
         <% @challenges.each do |challenge| %>
           <tr class="<%= cycle("active", "success", "warning", "danger") -%>">
-            <td>1</td>
             <td><%= challenge.name %></td>
-            <td>active</td>
+            <td>category</td>
+            <td>
+              <% challenge.get_owners.each do |owner| %>
+              <%= owner.name %>
+              <% end %>
+            </td>
             <td>active</td>
           </tr>
         <% end %>
@@ -45,6 +49,7 @@
     </table>
   </div>
 </div>
+
 
 <br>
 
