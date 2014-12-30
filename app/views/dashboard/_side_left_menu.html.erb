@@ -13,14 +13,14 @@ data-position="right" class="navbar-default navbar-static-side">
     </i><span class="menu-title">Challenges</span></a>
 
   </li>
-  <li><a href="UIElements.html"><i class="fa fa-send-o fa-fw">
+  <li class=<%= "active" if params[:controller] == "challenges" && params[:action] == "my_challenges" %> ><a href=<%= my_challenges_challenges_path %>><i class="fa fa-send-o fa-fw">
     <div class="icon-bg bg-green"></div>
   </i><span class="menu-title">My Challenges</span></a>
 
 </li>
 <li><a href="Forms.html"><i class="fa fa-edit fa-fw">
   <div class="icon-bg bg-violet"></div>
-</i><span class="menu-title">Freinds Circle</span></a>
+</i><span class="menu-title">Friends Circle</span></a>
 
 </li>
 <li><a href="Tables.html"><i class="fa fa-th-list fa-fw">
