@@ -1,33 +1,79 @@
-<%= form_for(@challenge) do |f| %>
-  <% if @challenge.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@challenge.errors.count, "error") %> prohibited this challenge from being saved:</h2>
+<div class="panel panel-grey">
+  <div class="panel-heading">
+    Create Challenge</div>
+    <div class="panel-body pan">
+      <%= form_for(@challenge) do |f| %>
+        <% if @challenge.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@challenge.errors.count, "error") %> prohibited this challenge from being saved:</h2>
 
-      <ul>
-      <% @challenge.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+            <ul>
+            <% @challenge.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+    <div class="form-body pal">
+
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-1">
+                  <%= f.label :name, :class => "control-label" %>
+                </div>
+                <div class="col-sm-7">
+                  <%= f.text_field :name ,:class =>"form-control"%>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-1">
+                  <%= f.label :description, :class => "control-label" %>
+                </div>
+                <div class="col-sm-7">
+                  <%= f.text_area :description ,:class =>"form-control"%>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-1">
+                  <%= f.label :starts_on, :class => "control-label" %>
+                </div>
+                <div class="col-sm-7">
+                  <div style="display:none">
+                    <%= f.datetime_select :starts_on ,:class => 'datetimepicker' %>
+                  </div>
+                  <%= f.text_field :c_start, :class => "datetimepicker",:id => "c_start"  %>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-1">
+                  <%= f.label :ends_on, :class => "control-label" %>
+                </div>
+                <div class="col-sm-7">
+                  <div style="display:none">
+                    <%= f.datetime_select :ends_on %>
+                  </div>
+                  <%= f.text_field :c_end, :class => "datetimepicker",:id => "c_end"  %>
+                </div>
+              </div>
+            </div>
+
     </div>
-  <% end %>
+        <div class="form-actions text-right pal">
+          <%= f.submit :class => "btn btn-primary"%>
+          </div>
+      <% end %>
+    </div>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :starts_on %><br>
-    <%= f.datetime_select :starts_on %>
-  </div>
-  <div class="field">
-    <%= f.label :ends_on %><br>
-    <%= f.datetime_select :ends_on %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
