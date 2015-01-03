@@ -39,18 +39,28 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'therubyracer', '~> 0.12.1'
+
+#Authenticate & Authorize users of Challengify
 gem 'devise'
 
+#Gem to spot bugs in code
 group :development do
   gem "better_errors"
 end
-
+#Gem to spot bugs in code
 gem "binding_of_caller"
 
-
+#This one handles file upload
 gem "dragonfly"
 
+#Gem to implement stuff like likes,followers,tagging etc.
 gem 'acts-as-taggable-on'
 
 #Gem to define role of a user in a particular challenge
 gem "rolify"
+
+
+#gem to add jquery-datetime picker to forms
+gem 'jquery-datetimepicker-rails'
+
+gem 'pry-rails'
