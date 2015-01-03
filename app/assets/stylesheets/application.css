@@ -22,4 +22,5 @@
  *= require zabuto_calendar.min
  *= require pace
  *= require jquery.news-ticker
+ *= require jquery.datetimepicker
  */

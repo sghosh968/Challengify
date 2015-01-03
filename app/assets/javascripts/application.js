@@ -98,3 +98,6 @@
 
 // require ui-nestable-list
 // require users.js
+//= require jquery.datetimepicker
+//= require jquery.datetimepicker/init
+//= require custom
