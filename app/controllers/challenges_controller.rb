@@ -24,6 +24,20 @@ class ChallengesController < ApplicationController
   # POST /challenges
   # POST /challenges.json
   def create
+    @start = DateTime.strptime(params[:challenge][:c_start], '%Y/%m/%d %H:%M')
+    @end = DateTime.strptime(params[:challenge][:c_end], '%Y/%m/%d %H:%M')
+    params[:challenge]["starts_on(1i)"] = @start.year.to_s
+    params[:challenge]["starts_on(2i)"] = @start.month.to_s
+    params[:challenge]["starts_on(3i)"] = @start.day.to_s
+    params[:challenge]["starts_on(4i)"] = @start.hour.to_s
+    params[:challenge]["starts_on(5i)"] = @start.min.to_s
+
+    params[:challenge]["ends_on(1i)"] = @end.year.to_s
+    params[:challenge]["ends_on(2i)"] = @end.month.to_s
+    params[:challenge]["ends_on(3i)"] = @end.day.to_s
+    params[:challenge]["ends_on(4i)"] = @end.hour.to_s
+    params[:challenge]["ends_on(5i)"] = @end.min.to_s
+
     @challenge = Challenge.new(challenge_params)
 
     respond_to do |format|
