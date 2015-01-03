@@ -13,4 +13,8 @@ class Challenge < ActiveRecord::Base
   def is_owner?(user)
     self.get_owners.include?(user)
   end
+  def c_start
+  end
+  def c_end
+  end
 end
