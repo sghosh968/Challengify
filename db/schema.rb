@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141228191722) do
+ActiveRecord::Schema.define(version: 20150105180429) do
 
   create_table "challenges", force: true do |t|
     t.string   "name"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20141228191722) do
     t.datetime "ends_on"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_uid"
+    t.string   "image_name"
   end
 
   create_table "roles", force: true do |t|

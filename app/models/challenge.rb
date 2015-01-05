@@ -1,6 +1,7 @@
 class Challenge < ActiveRecord::Base
   resourcify
 
+  dragonfly_accessor :image
 
 
 
