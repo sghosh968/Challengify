@@ -42,7 +42,15 @@
               <%= owner.name %>
               <% end %>
             </td>
-            <td>active</td>
+            <% if challenge.starts_on <= DateTime.now && DateTime.now < challenge.ends_on %>
+              <td><span class="badge badge-success">Active</span></td>
+            <% elsif challenge.ends_on < DateTime.now %>
+              <td><span class="badge badge-primary">Over</span></td>
+            <% else %>
+            <td><span class="badge badge-info">Not yet Started</span></td>
+            <% end %>
+
+
           </tr>
         <% end %>
       </tbody>

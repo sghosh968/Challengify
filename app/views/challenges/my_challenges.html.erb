@@ -24,7 +24,17 @@
             <%= owner.name %>
             <% end %>
           </td>
-          <td>active</td>
+          <% if challenge.starts_on <= DateTime.now && DateTime.now < challenge.ends_on %>
+          <td><span class="badge badge-success">Active</span></td>
+          <% elsif challenge.ends_on < DateTime.now %>
+          <td><span class="badge badge-primary">Over</span></td>
+          <% else %>
+          <td><span class="badge badge-info">Not yet Started</span></td>
+
+          <% end %>
+          <td>
+            <%= button_to "<i class='fa fa-trash></i>".html_safe,{ action: "destroy", id: challenge.id }, method: :delete, data: { confirm: "Are you sure?" }  %>
+          </td>
         </tr>
         <% end %>
       </tbody>
