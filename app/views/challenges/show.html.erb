@@ -20,5 +20,9 @@
   <%= @challenge.ends_on %>
 </p>
 
+<p>
+  <%= image_tag @challenge.image.thumb('400x200#').url if @challenge.image_stored? %>
+</p>
+
 <%= link_to 'Edit', edit_challenge_path(@challenge) %> |
 <%= link_to 'Back', challenges_path %>
