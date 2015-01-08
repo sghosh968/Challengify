@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
 
-  before_action :set_user, only: [:edit_profile]
+  before_action :set_user, only: [:edit, :update]
 
-  def edit_profile
-
+  def edit
+    
+  end
+  def update
 
   end
 
