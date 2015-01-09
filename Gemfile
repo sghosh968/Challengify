@@ -64,3 +64,5 @@ gem "rolify"
 gem 'jquery-datetimepicker-rails'
 
 gem 'pry-rails'
+
+gem 'mail'
