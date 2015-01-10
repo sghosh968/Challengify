@@ -14,7 +14,30 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.mailgun.org",
+    :port                 => 587,
+    :user_name            => 'postmaster@sandbox00c1631dcb36496dbdd5f58241eda3e5.mailgun.org',
+    :password             => 'bf2e44308717266a4672e5e7b88f7671',
+    :enable_starttls_auto => true
+  }
+
+  # Debug mode disables concatenation and preprocessing of assets.
+  # This option may cause significant delays in view rendering with a large
+  # number of complex assets.
+  config.assets.debug = true
+
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+
+
+
+
+
+
+
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -34,9 +57,6 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-  config.action_mailer.default_url_options = {
-    :host => 'localhost',
-    :port => 3000
-  }
+
 
 end
