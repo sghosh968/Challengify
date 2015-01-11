@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150109195411) do
+ActiveRecord::Schema.define(version: 20150111155937) do
 
   create_table "challenges", force: true do |t|
     t.string   "name"
@@ -62,6 +62,8 @@ ActiveRecord::Schema.define(version: 20150109195411) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.string   "image_uid"
+    t.string   "image_name"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
