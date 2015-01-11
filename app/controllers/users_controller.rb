@@ -3,9 +3,18 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update]
 
   def edit
-    
+
   end
   def update
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to edit_user_path, notice: 'Your Profile was successfully updated.' }
+        #format.json { render :show, status: :ok, location: @challenge }
+      else
+        format.html { render :edit }
+        #format.json { render json: @challenge.errors, status: :unprocessable_entity }
+      end
+    end
 
   end
 
@@ -18,16 +27,9 @@ class UsersController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
-    params.require(:user).permit(:name, :description, :starts_on, :ends_on,:image)
+    params.require(:user).permit(:image,:name, :description, :starts_on, :ends_on,:email, :username, :password,:password_confirmation ,:first_name, :last_name, :about, :phone, :website, :facebook_url, :twitter_url)
   end
 
-  def profile_params
-    params.require(:user).permit(:twitter_handle, :phone_number, :location,:quora_handle, :email, :first_name, :last_name)
-  end
-
-  def profile_update_params
-    params.require(:user).permit(:twitter_handle, :phone_number, :location,:quora_handle, :email, :first_name, :last_name)
-  end
 
 
 end
