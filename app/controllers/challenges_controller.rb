@@ -24,8 +24,8 @@ class ChallengesController < ApplicationController
   # POST /challenges
   # POST /challenges.json
   def create
-    @start = DateTime.strptime(params[:challenge][:c_start], '%Y/%m/%d %H:%M')
-    @end = DateTime.strptime(params[:challenge][:c_end], '%Y/%m/%d %H:%M')
+    @start = params[:challenge][:c_start].to_datetime
+    @end = params[:challenge][:c_end].to_datetime
     params[:challenge]["starts_on(1i)"] = @start.year.to_s
     params[:challenge]["starts_on(2i)"] = @start.month.to_s
     params[:challenge]["starts_on(3i)"] = @start.day.to_s
@@ -91,6 +91,6 @@ class ChallengesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def challenge_params
-      params.require(:challenge).permit(:name, :description, :starts_on, :ends_on,:image)
+      params.require(:challenge).permit(:name, :description, :starts_on, :ends_on,:image , :c_start , :c_end)
     end
 end
