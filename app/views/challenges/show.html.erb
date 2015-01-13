@@ -1,28 +1,68 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @challenge.name %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @challenge.description %>
-</p>
+<div class="col-md-12"><h2><%= @challenge.name %></h2>
 
-<p>
-  <strong>Starts on:</strong>
-  <%= @challenge.starts_on %>
-</p>
-
-<p>
-  <strong>Ends on:</strong>
-  <%= @challenge.ends_on %>
-</p>
-
-<p>
-  <%= image_tag @challenge.image.thumb('400x200#').url if @challenge.image_stored? %>
-</p>
-
-<%= link_to 'Edit', edit_challenge_path(@challenge) %> |
-<%= link_to 'Back', challenges_path %>
+  <div class="row mtl">
+    <div class="col-md-3">
+      <span><h4>Created By </h4></span>
+      <div class="form-group">
+        <div class="text-center mbl"><img src="<%= @challenge.get_owners.first.image.remote_url %>" alt="" class="img-circle" height="120" width="120"> </div>
+        <div class="text-center mbl"></div>
+      </div>
+        <table class="table table-striped table-hover">
+          <tbody>
+            <tr>
+              <td>User Name</td>
+              <td><%= current_user.name %></td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td><%= current_user.email %></td>
+            </tr>
+            <tr>
+              <td>Status</td>
+              <td><span class="label label-success">Active</span></td>
+            </tr>
+            <tr>
+              <td>User Rating</td>
+              <td><i class="fa fa-star text-yellow fa-fw"></i><i class="fa fa-star text-yellow fa-fw"></i><i class="fa fa-star text-yellow fa-fw"></i><i class="fa fa-star text-yellow fa-fw"></i><i class="fa fa-star text-yellow fa-fw"></i></td>
+            </tr>
+            <tr>
+              <td>Member Since</td>
+              <td><%= current_user.created_at.to_datetime.strftime("%B %d, %Y") %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-9">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#tab-edit" data-toggle="tab">Edit Profile</a></li>
+        </ul>
+        <div id="generalTabContent" class="tab-content">
+          <div class="dw_clock"></div>
+          <p>
+            <%= image_tag @challenge.image.thumb('400x200#').url ,:class => 'img-rounded' if @challenge.image_stored? %>
+          </p>
+          <p>
+            <strong>Name:</strong>
+            <%= @challenge.name %>
+          </p>
+          <p>
+            <strong>Description:</strong>
+            <%= @challenge.description %>
+          </p>
+          <p>
+            <strong>Starts on:</strong>
+            <%= @challenge.starts_on %>
+          </p>
+          <p>
+            <strong>Ends on:</strong>
+            <%= @challenge.ends_on %>
+          </p>
+          <%= link_to 'Edit', edit_challenge_path(@challenge) %> |
+          <%= link_to 'Back', challenges_path %>
+        </div>
+      </div>
+    </div>
+  </div>

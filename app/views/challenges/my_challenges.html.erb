@@ -33,9 +33,13 @@
 
           <% end %>
           <td>
+            <%= link_to "<i class='fa fa-binoculars'></i>".html_safe, challenge_path(challenge) %>
+          </td>
+          <td>
             <%= link_to "<i class='fa fa-edit'></i>".html_safe, edit_challenge_path(challenge) %>
           </td>
           <td>
+            <%= link_to "<i class='fa fa-trash'></i>".html_safe, challenge_path(challenge),method: :delete,:confirm=>'Are you sure?'  %>
             <%= button_to "<i class='fa fa-trash></i>".html_safe,{ action: "destroy", id: challenge.id }, method: :delete, data: { confirm: "Are you sure?" }  %>
           </td>
 
