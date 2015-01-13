@@ -48,6 +48,8 @@
 //= require highcharts-more
 //= require charts-highchart-pie
 //= require charts-highchart-more
+//= require custom
+//= require flipclock.min
 //= require main
 
 
@@ -100,4 +102,3 @@
 // require users.js
 //= require jquery.datetimepicker
 //= require jquery.datetimepicker/init
-//= require custom
