@@ -261,6 +261,7 @@ Devise.setup do |config|
   Rails.application.config.to_prepare do
     Devise::SessionsController.layout "devise_login"
     Devise::RegistrationsController.layout "devise_login"
+    Devise::PasswordsController.layout "devise_login"
   end
 
 
