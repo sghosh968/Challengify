@@ -3,7 +3,7 @@
   <div class="row mtl">
     <div class="col-md-3">
       <div class="form-group">
-        <div class="text-center mbl"><img src="<%= @user.image.remote_url %>" alt="" class="img-responsive"></div>
+        <div class="text-center mbl"><img src="<%= @user.image.remote_url unless current_user.image.blank? %>" alt="" class="img-responsive"></div>
         <div class="text-center mbl"><a href="#" class="btn btn-green"><i class="fa fa-upload"></i>&nbsp;
           Upload</a></div>
       </div>
