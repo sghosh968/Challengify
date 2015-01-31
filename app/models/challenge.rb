@@ -2,6 +2,7 @@ class Challenge < ActiveRecord::Base
   resourcify
 
   dragonfly_accessor :image
+  attr_accessor :c_start , :c_end
 
 
   #get owners of a challenge
