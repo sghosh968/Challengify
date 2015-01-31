@@ -9,7 +9,7 @@ $(window).load(function(){
   //});
   //clock.countdown(true);
 //  clock.setCountdown(true);
-
+//alert("hi");
 var clock;
 // Grab the current date
 var currentDate = new Date();

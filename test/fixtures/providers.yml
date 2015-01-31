@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  provider_name: MyString
+  uid: MyString
+  token: MyString
+  public_url: MyString
+  auth_secret: MyString
+  refresh_token: MyString
+
+two:
+  user_id: 
+  provider_name: MyString
+  uid: MyString
+  token: MyString
+  public_url: MyString
+  auth_secret: MyString
+  refresh_token: MyString
