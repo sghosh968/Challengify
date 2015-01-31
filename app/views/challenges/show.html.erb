@@ -37,12 +37,12 @@
       </div>
       <div class="col-md-9">
         <ul class="nav nav-tabs">
-          <li class="active"><a href="#tab-edit" data-toggle="tab">Edit Profile</a></li>
+          <!-- <li class="active"><a href="#tab-edit" data-toggle="tab">Edit Profile</a></li> -->
         </ul>
         <div id="generalTabContent" class="tab-content">
-          <div class="dw_clock"></div>
+          <div class="dw_clock" style="zoom: 0.95;"></div>
           <p>
-            <%= image_tag @challenge.image.thumb('400x200#').url ,:class => 'img-rounded' if @challenge.image_stored? %>
+            <%= image_tag @challenge.image.url ,:class => 'img-responsive' if @challenge.image_stored? %>
           </p>
           <p>
             <strong>Name:</strong>
