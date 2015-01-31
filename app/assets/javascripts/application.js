@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+// require turbolinks
 
 //= require jquery-1.10.2.min
 //= require jquery-migrate-1.2.1.min
