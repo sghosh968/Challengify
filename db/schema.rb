@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150111155937) do
+ActiveRecord::Schema.define(version: 20150119230210) do
 
   create_table "challenges", force: true do |t|
     t.string   "name"
@@ -23,6 +23,20 @@ ActiveRecord::Schema.define(version: 20150111155937) do
     t.string   "image_uid"
     t.string   "image_name"
   end
+
+  create_table "providers", force: true do |t|
+    t.integer  "user_id"
+    t.string   "provider_name"
+    t.string   "uid"
+    t.string   "token"
+    t.string   "public_url"
+    t.string   "auth_secret"
+    t.string   "refresh_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "providers", ["user_id"], name: "index_providers_on_user_id"
 
   create_table "roles", force: true do |t|
     t.string   "name"
