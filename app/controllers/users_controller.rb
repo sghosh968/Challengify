@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :set_user, only: [:edit, :update]
+  before_action :set_user, only: [:edit, :update, :dashboard]
 
   def edit
 
@@ -15,6 +15,10 @@ class UsersController < ApplicationController
         #format.json { render json: @challenge.errors, status: :unprocessable_entity }
       end
     end
+
+  end
+
+  def dashboard
 
   end
 
