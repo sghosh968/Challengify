@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :friendships
+
   devise_for :users, controllers: { :omniauth_callbacks => "omniauth_callbacks", :registrations => "registrations" }
   resources :challenges do
     get :my_challenges, :on => :collection
@@ -9,7 +11,9 @@ Rails.application.routes.draw do
     root to: "devise/sessions#new"
   end
 
-  resources :users
+  resources :users do
+    get :dashboard
+  end  
 
 
   # The priority is based upon order of creation: first created -> highest priority.
