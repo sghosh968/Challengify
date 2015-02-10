@@ -7,7 +7,9 @@
     <div class="col-md-2">
     </div>
     <div class="col-md-4">
-      <strong></strong> &nbsp;&nbsp;&nbsp; <span class="badge badge-success">Accept</span>&nbsp;&nbsp;<span class="badge badge-danger">Reject</span></br>
+      <% @pending_friend_requests.each do |request| %>
+        <strong><%= request.user.name %></strong> &nbsp;&nbsp;&nbsp; <span class="badge badge-success">Accept</span>&nbsp;&nbsp;<span class="badge badge-danger">Reject</span><button type="submit" class="btn btn-default">Send invitation</button></br>
+      <% end %>
     </div>
   </div>
 </div>

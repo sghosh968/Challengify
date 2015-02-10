@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :friendships
+
+  resources :friendships do
+    put :process_friendship_request
+  end
 
   devise_for :users, controllers: { :omniauth_callbacks => "omniauth_callbacks", :registrations => "registrations" }
   resources :challenges do
@@ -13,7 +16,7 @@ Rails.application.routes.draw do
 
   resources :users do
     get :dashboard
-  end  
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

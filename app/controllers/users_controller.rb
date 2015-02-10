@@ -17,9 +17,9 @@ class UsersController < ApplicationController
     end
 
   end
-
+  # action for dashboard page
   def dashboard
-
+    @pending_friend_requests = current_user.pending_received_friend_requests
   end
 
 
