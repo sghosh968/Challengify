@@ -16,4 +16,9 @@ class User < ActiveRecord::Base
   def name
     self.first_name + " " + self.last_name unless (self.first_name.blank? || self.last_name.blank?)
   end
+
+  #method will return current_user's received friend requests that are pending
+  def pending_received_friend_requests
+    Friendship.pending_received_friend_requests(self.id)
+  end
 end
