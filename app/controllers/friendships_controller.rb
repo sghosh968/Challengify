@@ -36,6 +36,12 @@ class FriendshipsController < ApplicationController
     respond_with(@friendship)
   end
 
+  # action to process friendship requests
+  def process_friendship_request
+    
+
+  end
+
   private
     def set_friendship
       @friendship = Friendship.find(params[:id])
