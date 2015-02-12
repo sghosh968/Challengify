@@ -12,10 +12,10 @@
  *
  *=
  *= require_self
- *= require font-awesome.min
- *= require bootstrap.min
- *= require animate
- *= require all
- *= require main
- *= require style-responsive
+ * require font-awesome.min
+ * require bootstrap.min
+ * require animate
+ * require all
+ * require main
+ * require style-responsive
  */

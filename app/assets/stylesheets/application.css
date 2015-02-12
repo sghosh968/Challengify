@@ -11,16 +11,9 @@
  * file per style scope.
  *
  *= require_self
- *= require jquery-ui-1.10.4.custom.min
- * require font-awesome.min
- *= require bootstrap.min
- *= require animate
- * require all
- *= require main
- *= require style-responsive
- * require zabuto_calendar.min
- *= require pace
- *= require jquery.news-ticker
- *= require jquery.datetimepicker
- *= require flipclock
+ *= require plugins/morris/morris
+ *= require plugins/jvectormap/jquery-jvectormap-1.2.2
+ *= require plugins/daterangepicker/daterangepicker-bs3
+ *= require AdminLTE.min.css
+ *= require skins/_all-skins.min.css
  */

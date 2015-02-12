@@ -1,67 +1,161 @@
-<!--BEGIN SIDEBAR MENU-->
-<nav id="sidebar" role="navigation" data-step="2" data-intro="Template has &lt;b&gt;many navigation styles&lt;/b&gt;"
-data-position="right" class="navbar-default navbar-static-side">
-<div class="sidebar-collapse menu-scroll">
-  <ul id="side-menu" class="nav">
+<aside class="main-sidebar">
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+    <!-- Sidebar user panel -->
+    <div class="user-panel">
+      <div class="pull-left image">
+        <img src=<%= get_user_image_url %> class="img-circle" alt="User Image" />
+      </div>
+      <div class="pull-left info">
+        <p>Alexander Pierce</p>
 
-    <div class="clearfix"></div>
-    <li><a href="dashboard.html"><i class="fa fa-tachometer fa-fw">
-      <div class="icon-bg bg-orange"></div>
-    </i><span class="menu-title">Dashboard</span></a></li>
-    <li class=<%= "active" if params[:controller] == "challenges" && params[:action] == "index" %>><a href=<%= challenges_path %>><i class="fa fa-desktop fa-fw">
-      <div class="icon-bg bg-pink"></div>
-    </i><span class="menu-title">Challenges</span></a>
-
-  </li>
-  <li class=<%= "active" if params[:controller] == "challenges" && params[:action] == "my_challenges" %> ><a href=<%= my_challenges_challenges_path %>><i class="fa fa-send-o fa-fw">
-    <div class="icon-bg bg-green"></div>
-  </i><span class="menu-title">My Challenges</span></a>
-
-</li>
-<li><a href=<%= friendships_path %>><i class="fa fa-edit fa-fw">
-  <div class="icon-bg bg-violet"></div>
-</i><span class="menu-title">Friends Circle</span></a>
-
-</li>
-<li><a href="Tables.html"><i class="fa fa-th-list fa-fw">
-  <div class="icon-bg bg-blue"></div>
-</i><span class="menu-title">Tables</span></a>
-
-</li>
-<li><a href="DataGrid.html"><i class="fa fa-database fa-fw">
-  <div class="icon-bg bg-red"></div>
-</i><span class="menu-title">Data Grids</span></a>
-
-</li>
-<li><a href="Pages.html"><i class="fa fa-file-o fa-fw">
-  <div class="icon-bg bg-yellow"></div>
-</i><span class="menu-title">Pages</span></a>
-
-</li>
-<li><a href="Extras.html"><i class="fa fa-gift fa-fw">
-  <div class="icon-bg bg-grey"></div>
-</i><span class="menu-title">Extras</span></a>
-
-</li>
-<li><a href="Dropdown.html"><i class="fa fa-sitemap fa-fw">
-  <div class="icon-bg bg-dark"></div>
-</i><span class="menu-title">Multi-Level Dropdown</span></a>
-
-</li>
-<li><a href="Email.html"><i class="fa fa-envelope-o">
-  <div class="icon-bg bg-primary"></div>
-</i><span class="menu-title">Email</span></a>
-
-</li>
-<li><a href="Charts.html"><i class="fa fa-bar-chart-o fa-fw">
-  <div class="icon-bg bg-orange"></div>
-</i><span class="menu-title">Charts</span></a>
-
-</li>
-<li><a href="Animation.html"><i class="fa fa-slack fa-fw">
-  <div class="icon-bg bg-green"></div>
-</i><span class="menu-title">Animations</span></a></li>
-</ul>
-</div>
-</nav>
-<!--END SIDEBAR MENU-->
+        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+      </div>
+    </div>
+    <!-- search form -->
+    <form action="#" method="get" class="sidebar-form">
+      <div class="input-group">
+        <input type="text" name="q" class="form-control" placeholder="Search..."/>
+        <span class="input-group-btn">
+          <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+        </span>
+      </div>
+    </form>
+    <!-- /.search form -->
+    <!-- sidebar menu: : style can be found in sidebar.less -->
+    <ul class="sidebar-menu">
+      <li class="header">MAIN NAVIGATION</li>
+      <li class="active treeview">
+        <a href="#">
+          <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+          <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-files-o"></i>
+          <span>Layout Options</span>
+          <span class="label label-primary pull-right">3</span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
+          <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
+          <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
+          <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="pages/widgets.html">
+          <i class="fa fa-th"></i> <span>Widgets</span> <small class="label pull-right bg-green">new</small>
+        </a>
+      </li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-pie-chart"></i>
+          <span>Charts</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
+          <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
+          <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-laptop"></i>
+          <span>UI Elements</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
+          <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
+          <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
+          <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
+          <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
+          <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-edit"></i> <span>Forms</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
+          <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
+          <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-table"></i> <span>Tables</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
+          <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="pages/calendar.html">
+          <i class="fa fa-calendar"></i> <span>Calendar</span>
+          <small class="label pull-right bg-red">3</small>
+        </a>
+      </li>
+      <li>
+        <a href="pages/mailbox.html">
+          <i class="fa fa-envelope"></i> <span>Mailbox</span>
+          <small class="label pull-right bg-yellow">12</small>
+        </a>
+      </li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-folder"></i> <span>Examples</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
+          <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Login</a></li>
+          <li><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> Register</a></li>
+          <li><a href="pages/examples/lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
+          <li><a href="pages/examples/404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
+          <li><a href="pages/examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
+          <li><a href="pages/examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-share"></i> <span>Multilevel</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+          <li>
+            <a href="#"><i class="fa fa-circle-o"></i> Level One <i class="fa fa-angle-left pull-right"></i></a>
+            <ul class="treeview-menu">
+              <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
+              <li>
+                <a href="#"><i class="fa fa-circle-o"></i> Level Two <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                  <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                  <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+        </ul>
+      </li>
+      <li><a href="documentation/index.html"><i class="fa fa-book"></i> Documentation</a></li>
+      <li class="header">LABELS</li>
+      <li><a href="#"><i class="fa fa-circle-o text-danger"></i> Important</a></li>
+      <li><a href="#"><i class="fa fa-circle-o text-warning"></i> Warning</a></li>
+      <li><a href="#"><i class="fa fa-circle-o text-info"></i> Information</a></li>
+    </ul>
+  </section>
+  <!-- /.sidebar -->
+</aside>
