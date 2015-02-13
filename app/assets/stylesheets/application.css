@@ -14,6 +14,7 @@
  *= require plugins/morris/morris
  *= require plugins/jvectormap/jquery-jvectormap-1.2.2
  *= require plugins/daterangepicker/daterangepicker-bs3
- *= require AdminLTE.min.css
- *= require skins/_all-skins.min.css
+ *= require plugins/iCheck/all
+ *= require AdminLTE.min
+ *= require skins/_all-skins.min
  */
