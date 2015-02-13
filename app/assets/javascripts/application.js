@@ -11,7 +11,7 @@
 // about supported directives.
 //
 
-
+//= require plugins/iCheck/icheck.min.js
 //= require app.min
 //= require plugins/sparkline/jquery.sparkline.min
 //= require plugins/jvectormap/jquery-jvectormap-1.2.2.min.js
@@ -19,8 +19,9 @@
 //= require plugins/jqueryKnob/jquery.knob.js
 //= require plugins/daterangepicker/daterangepicker.js
 //= require plugins/datepicker/bootstrap-datepicker.js
-//= require plugins/iCheck/icheck.min.js
 //= require plugins/slimScroll/jquery.slimscroll.min.js
 //= require plugins/chartjs/Chart.min.js
 //= require pages/dashboard2.js
 //= require demo.js
+//= require jquery_ujs
+//= require custom
