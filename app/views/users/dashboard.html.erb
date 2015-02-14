@@ -1,14 +1,14 @@
-<div class="alert alert-warning alert-dismissable">
-  <button type="button" data-dismiss="alert" aria-hidden="true" class="close">×</button>
+<div class="alert alert-success alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
   <div class="row">
     <div class="col-md-3">
-      New friend request from
+  <h4 style="font-weight: 400;"><i class="icon fa fa-user-plus"></i> New friend requests</h4>
     </div>
     <div class="col-md-2">
     </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
       <% @pending_friend_requests.each do |request| %>
-        <strong><%= request.user.name %></strong> &nbsp;&nbsp;&nbsp; <span class="badge badge-success">Accept</span>&nbsp;&nbsp;<span class="badge badge-danger">Reject</span><button type="submit" class="btn btn-default">Send invitation</button></br>
+      <strong style="font-weight: 400;"><%= request.user.name %></strong> &nbsp;&nbsp;&nbsp; <button class="btn btn-warning btn-xs"><i class="fa fa-fw fa-check-circle"></i>&nbsp;Accept</button>&nbsp;&nbsp;<button class="btn btn-danger btn-xs"><i class="fa fa-fw fa-times-circle"></i>&nbsp;Reject</button></br>
       <% end %>
     </div>
   </div>
