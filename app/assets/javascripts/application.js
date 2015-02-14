@@ -24,4 +24,6 @@
 //= require pages/dashboard2.js
 //= require demo.js
 //= require jquery_ujs
+//= require flipclock.min
+//= require jquery.datetimepicker
 //= require custom

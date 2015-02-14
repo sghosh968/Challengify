@@ -17,4 +17,6 @@
  * require plugins/iCheck/all
  *= require AdminLTE.min
  *= require skins/_all-skins.min
+ *= require jquery.datetimepicker
+ *= require flipclock
  */
