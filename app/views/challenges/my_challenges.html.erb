@@ -1,55 +1,61 @@
-<h2>Listing challenges</h2>
 
 
 
-<div class="panel panel-grey">
-  <div class="panel-heading">Listing challenges</div>
-  <div class="panel-body">
-    <table class="table table-hover-color">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Category</th>
-          <th>Owner</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @my_challenges.each do |challenge| %>
-        <tr class="<%= cycle("active", "success", "warning", "danger") -%>">
-          <td><%= challenge.name %></td>
-          <td>category</td>
-          <td>
-            <% challenge.get_owners.each do |owner| %>
-            <%= owner.name %>
-            <% end %>
-          </td>
-          <% if challenge.starts_on <= DateTime.now && DateTime.now < challenge.ends_on %>
-          <td><span class="badge badge-success">Active</span></td>
-          <% elsif challenge.ends_on < DateTime.now %>
-          <td><span class="badge badge-primary">Over</span></td>
-          <% else %>
-          <td><span class="badge badge-info">Not yet Started</span></td>
+<h2>My challenges</h2>
 
-          <% end %>
-          <td>
-            <%= link_to "<i class='fa fa-binoculars'></i>".html_safe, challenge_path(challenge) %>
-          </td>
-          <td>
-            <%= link_to "<i class='fa fa-edit'></i>".html_safe, edit_challenge_path(challenge) %>
-          </td>
-          <td>
-            <%= link_to "<i class='fa fa-trash'></i>".html_safe, challenge_path(challenge),method: :delete,:confirm=>'Are you sure?'  %>
-            <%= button_to "<i class='fa fa-trash></i>".html_safe,{ action: "destroy", id: challenge.id }, method: :delete, data: { confirm: "Are you sure?" }  %>
-          </td>
-
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
+<div class="box box-success">
+  <div class="box-header">
+    <h3 class="box-title">Listing your challenges</h3>
+    <!-- <div class="box-tools">
+    <div class="input-group">
+    <input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search">
+    <div class="input-group-btn">
+    <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
   </div>
 </div>
-
+</div> -->
+</div><!-- /.box-header -->
+<div class="box-body table-responsive no-padding">
+  <table class="table table-hover">
+    <tbody><tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Owner</th>
+      <th>Status</th>
+      <th>View</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    <% @my_challenges.each do |challenge| %>
+    <tr>
+      <td><%= challenge.name %></td>
+      <td>category</td>
+      <td>
+        <% challenge.get_owners.each do |owner| %>
+        <%= owner.name %>
+        <% end %>
+      </td>
+      <% if challenge.starts_on <= DateTime.now && DateTime.now < challenge.ends_on %>
+      <td><span class="label label-success">Active</span></td>
+      <% elsif challenge.ends_on < DateTime.now %>
+      <td><span class="label label-primary">Over</span></td>
+      <% else %>
+      <td><span class="label label-info">Not yet Started</span></td>
+      <% end %>
+      <td>&nbsp;
+        <%= link_to "<i class='fa fa-fw fa-eye'></i>".html_safe, challenge_path(challenge) %>
+      </td>
+      <td>&nbsp;
+        <%= link_to "<i class='fa fa-fw fa-edit'></i>".html_safe, edit_challenge_path(challenge) %>
+      </td>
+      <td>&nbsp;&nbsp;
+        <%= link_to "<i class='fa fa-fw fa-trash-o'></i>".html_safe, challenge_path(challenge),method: :delete,:confirm=>'Are you sure?'  %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody></table>
+</div><!-- /.box-body -->
+</div>
 
 <br>
 

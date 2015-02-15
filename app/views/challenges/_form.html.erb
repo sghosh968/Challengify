@@ -1,8 +1,9 @@
-<div class="panel panel-grey">
-  <div class="panel-heading">
-    Create Challenge</div>
-    <div class="panel-body pan">
-      <%= form_for(@challenge) do |f| %>
+<div class="box box-success">
+  <div class="box-header">
+    <h3 class="box-title">Create Challenge</h3></div>
+
+      <%= form_for(@challenge, {:role => "form"}) do |f| %>
+      <div class="box-body">
         <% if @challenge.errors.any? %>
           <div id="error_explanation">
             <h2><%= pluralize(@challenge.errors.count, "error") %> prohibited this challenge from being saved:</h2>
@@ -14,7 +15,7 @@
             </ul>
           </div>
         <% end %>
-    <div class="form-body pal">
+
 
 
             <div class="form-group">
@@ -82,11 +83,48 @@
 
 
 
-    </div>
-        <div class="form-actions text-right pal">
-          <%= f.submit :class => "btn btn-primary"%>
+
+  </div>
+        <div class="box-footer">
+          <%= f.submit :class => "btn btn-primary" %>
           </div>
       <% end %>
-    </div>
 
+</div>
+
+
+
+
+
+<div class="box box-primary">
+  <div class="box-header">
+    <h3 class="box-title">Quick Example</h3>
+  </div><!-- /.box-header -->
+  <!-- form start -->
+  <form role="form">
+    <div class="box-body">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputFile">File input</label>
+        <input type="file" id="exampleInputFile">
+        <p class="help-block">Example block-level help text here.</p>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Check me out
+        </label>
+      </div>
+    </div><!-- /.box-body -->
+
+    <div class="box-footer">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
 </div>
