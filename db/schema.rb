@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 20150208104542) do
     t.string   "gender"
     t.datetime "birthdate"
     t.text     "about"
-    t.decimal  "phone"
+    t.integer  "phone"
     t.string   "website"
     t.string   "facebook_url"
     t.string   "twitter_url"
