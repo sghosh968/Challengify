@@ -101,6 +101,7 @@ GEM
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
+    pg (0.18.1)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -183,6 +184,7 @@ DEPENDENCIES
   mail
   omniauth
   omniauth-facebook
+  pg
   pry-rails
   rails (= 4.1.8)
   rolify
