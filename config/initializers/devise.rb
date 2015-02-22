@@ -263,6 +263,7 @@ Devise.setup do |config|
     Devise::SessionsController.layout "devise_login"
     Devise::RegistrationsController.layout "devise_login"
     Devise::PasswordsController.layout "devise_login"
+    Devise::ConfirmationsController.layout "devise_login"
   end
 
 
