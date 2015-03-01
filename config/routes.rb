@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :friendships do
-    put :process_friendship_request
+    post :process_friendship_request
   end
 
   devise_for :users, controllers: { :omniauth_callbacks => "omniauth_callbacks", :registrations => "registrations" }
