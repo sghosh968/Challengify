@@ -11,6 +11,7 @@
 // about supported directives.
 //
 
+//= require jquery_ujs
 //= require app.min
 //= require plugins/sparkline/jquery.sparkline.min
 //= require plugins/jvectormap/jquery-jvectormap-1.2.2.min.js
@@ -23,7 +24,6 @@
 //= require plugins/chartjs/Chart.min.js
 //= require pages/dashboard2.js
 //= require demo.js
-//= require jquery_ujs
 //= require flipclock.min
 //= require jquery.datetimepicker
 //= require custom
