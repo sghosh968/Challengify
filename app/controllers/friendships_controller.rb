@@ -1,5 +1,5 @@
 class FriendshipsController < ApplicationController
-  before_action :set_friendship, only: [:show, :edit, :update, :destroy]
+  before_action :set_friendship, only: [:show, :edit, :update, :destroy, :process_friendship_request]
 
   respond_to :html
 
@@ -38,13 +38,19 @@ class FriendshipsController < ApplicationController
 
   # action to process friendship requests
   def process_friendship_request
-    
-
+     if params["process"] == "accept"
+       @friendship.update(:status => "Accepted"), :notice => "Friendship Request accepted"
+     elsif params["process"] == "reject"
+       @friendship.update(:status => "Rejected"), :notice => "Friendship Request rejected"
+     end
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
     def set_friendship
-      @friendship = Friendship.find(params[:id])
+      @friendship = Friendship.find(params[:id] || params[:friendship_id])
     end
 
     def friendship_params

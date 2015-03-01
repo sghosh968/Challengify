@@ -1,3 +1,4 @@
+var x;
 $(window).load(function(){
   $('.datetimepicker').datetimepicker();
 
@@ -87,10 +88,18 @@ $(function () {
   });
 });
 
+$('.fr_accept, .fr_reject').click(function(){
+  x = $(this)
+  $('#' + $(this).val().split('_')[1] ).val($(this).val().split('_')[0])
+  $(this).closest('form').submit();
+  $(this).closest('fieldset').hide();
+});
 
 
 
 
+});
 
-
+$(document).ready(function(){
+alert("Document is ready");
 });
