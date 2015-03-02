@@ -39,9 +39,11 @@ class FriendshipsController < ApplicationController
   # action to process friendship requests
   def process_friendship_request
      if params["process"] == "accept"
-       @friendship.update(:status => "Accepted"), :notice => "Friendship Request accepted"
+       #@friendship.update(:status => "Accepted")
+       flash[:notice => "Friendship Request accepted"]
      elsif params["process"] == "reject"
-       @friendship.update(:status => "Rejected"), :notice => "Friendship Request rejected"
+       #@friendship.update(:status => "Rejected")
+       flash[:notice => "Friendship Request rejected"]
      end
     respond_to do |format|
       format.js
