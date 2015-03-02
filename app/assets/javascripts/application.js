@@ -27,3 +27,4 @@
 //= require flipclock.min
 //= require jquery.datetimepicker
 //= require custom
+//= require_self
