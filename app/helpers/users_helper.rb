@@ -7,7 +7,7 @@ module UsersHelper
   def friend_requests_notifications(freind_requests)
     str = ""
     freind_requests.each do |friend_request|
-      str +="<form action=#{friendship_process_friendship_request_path(friend_request)} data-remote=true method='post'>
+      str +="<form action=#{friendship_process_friendship_request_path(friend_request)} data-remote=true method='post' id='process_fr_#{friend_request.id}'>
       <fieldset id=>
       <li>
         <a href='#'>
