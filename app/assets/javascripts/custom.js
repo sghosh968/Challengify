@@ -92,8 +92,14 @@ $('.fr_accept, .fr_reject').click(function(){
   x = $(this)
   $('#' + $(this).val().split('_')[1] ).val($(this).val().split('_')[0])
   $(this).closest('form').submit();
-  $(this).closest('fieldset').hide();
+  //$(this).closest('fieldset').hide();
 });
+
+window.setTimeout(function() {
+  $(".alert").fadeTo(1500, 0).slideUp(500, function(){
+    $(this).remove();
+  });
+}, 5000);
 
 
 
